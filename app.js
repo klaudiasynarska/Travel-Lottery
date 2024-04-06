@@ -14,9 +14,17 @@ const spain = {
 const destinations = [poland, spain];
 
 btn.addEventListener("click", function () {
-    let destination = destinations[getRandomNumber()];
-    lotteryResult.innerHTML = "<h2>" + destination["name"] + "</h2>";
-    lotteryResult.innerHTML += "<img src=" + destination["image_url"] + "></img>";
+    lotteryResult.innerHTML = "";
+    let loader = document.querySelector(".loader");
+    loader.style.display = "inline";
+
+    setTimeout(function () {
+        let destination = destinations[getRandomNumber()];
+        lotteryResult.innerHTML = "<h2>" + destination["name"] + "</h2>";
+        lotteryResult.innerHTML += "<img width=200 src=" + destination["image_url"] + "></img>";
+        loader.style.display = "none";
+        btn.textContent = "Try again";
+    }, 2000);
 });
 
 function getRandomNumber() {
