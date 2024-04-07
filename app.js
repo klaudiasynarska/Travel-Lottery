@@ -1,8 +1,11 @@
 const btn = document.getElementById("lottery-btn");
-const lotteryResult = document.querySelector(".lottery-result");
+const initialElement = document.getElementById("initial");
+const resultName = document.getElementById("result-name");
+const resultImage = document.getElementById("result-image");
 
 btn.addEventListener("click", function () {
-    lotteryResult.innerHTML = "";
+    initialElement.style.display = "none";
+    // lotteryResult.innerHTML = "";
     // let loader = document.querySelector(".loader");
     // loader.style.display = "inline";
 
@@ -23,13 +26,10 @@ btn.addEventListener("click", function () {
             return response.json();
         })
         .then(data => {
-            // loader.style.display = "none";
-
             let length = data.length;
             let destination = data[getRandomNumber(length)]
-            lotteryResult.innerHTML = destination["name"];
-            lotteryResult.innerHTML += "<img width=200 src=" + destination["media"]["flag"] + "></img>";
-            console.log(data);
+            resultName.innerText = destination["name"];
+            resultImage.src = destination["media"]["flag"];
         })
         .catch(error => {
             console.log(error);

@@ -1,12 +1,15 @@
 body {
     display: grid;
     height: 100vh;
-    grid-template-rows: auto 1fr auto;
+    place-items: center;
+    grid-template-rows: auto 1fr;
 }
 
 main {
     background: coral;
     padding: 3rem;
+    display: grid;
+    place-items: center;
 }
 
 header {
@@ -16,8 +19,15 @@ header {
 
 .lottery-result {
     background: yellow;
-    /* height: 5rem; */
+    place-items: center;
+    display: grid;
     min-height: 30vh;
+    min-width: 30vw;
+    align-items: stretch;
+}
+
+.result-image {
+    height: 20vh;
 }
 
 .btn {
@@ -29,6 +39,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    margin: 1rem;
 }
 
 .btn:hover {
