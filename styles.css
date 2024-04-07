@@ -8,6 +8,7 @@ body {
     height: 100vh;
     place-items: center;
     grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
     background: #C9E0F8;
     font-family: "Lemon Tuesday"; 
 }

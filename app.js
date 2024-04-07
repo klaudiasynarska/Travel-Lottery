@@ -1,9 +1,13 @@
-const btn = document.getElementById("lottery-btn");
+const lotteryBtn = document.getElementById("lottery-btn");
+const wishlistBtn = document.getElementById("wishlist-btn");
 const initialElement = document.getElementById("initial");
 const resultName = document.getElementById("result-name");
 const resultImage = document.getElementById("result-image");
 
-btn.addEventListener("click", function () {
+var wishlist = [];
+var destination;
+
+lotteryBtn.addEventListener("click", function () {
     initialElement.style.display = "none";
     // lotteryResult.innerHTML = "";
     // let loader = document.querySelector(".loader");
@@ -27,13 +31,27 @@ btn.addEventListener("click", function () {
         })
         .then(data => {
             let length = data.length;
-            let destination = data[getRandomNumber(length)]
+            destination = data[getRandomNumber(length)]
             resultName.innerText = destination["name"];
             resultImage.src = destination["media"]["flag"];
         })
         .catch(error => {
             console.log(error);
         });
+});
+
+wishlistBtn.addEventListener("click", function () {
+    
+
+    wishlist.push(destination);
+    let ul = document.getElementById("wishlist-list");
+    ul.innerHTML = "";
+
+    wishlist.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = item["name"];
+        ul.appendChild(li);
+    });
 });
 
 function getRandomNumber(length) {
