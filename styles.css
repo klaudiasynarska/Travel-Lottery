@@ -1,0 +1,36 @@
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+}
+
+main {
+    background: coral;
+    padding: 3rem;
+}
+
+header {
+    background: lightpink;
+    padding: 2rem;
+}
+
+.lottery-result {
+    background: yellow;
+    /* height: 5rem; */
+    min-height: 30vh;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: aqua;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

@@ -1,22 +1,10 @@
 const btn = document.getElementById("lottery-btn");
 const lotteryResult = document.querySelector(".lottery-result");
 
-const poland = {
-    "name": "Poland",
-    "image_url": "https://study.gov.pl/sites/default/files/maksym-harbar-okn8zijpmxi-unsplash.jpg",
-};
-
-const spain = {
-    "name": "Spain",
-    "image_url": "https://www.kiwi.com/tips/wp-content/uploads/2023/02/spain-valencia-castle-pope-luny-1-scaled.jpg",
-};
-
-const destinations = [poland, spain];
-
 btn.addEventListener("click", function () {
     lotteryResult.innerHTML = "";
-    let loader = document.querySelector(".loader");
-    loader.style.display = "inline";
+    // let loader = document.querySelector(".loader");
+    // loader.style.display = "inline";
 
     // setTimeout(function () {
     //     let destination = destinations[getRandomNumber()];
@@ -35,7 +23,7 @@ btn.addEventListener("click", function () {
             return response.json();
         })
         .then(data => {
-            loader.style.display = "none";
+            // loader.style.display = "none";
 
             let length = data.length;
             let destination = data[getRandomNumber(length)]
