@@ -5,36 +5,50 @@
 
 body {
     display: grid;
-    height: 100vh;
-    place-items: center;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     background: #C9E0F8;
-    font-family: "Lemon Tuesday"; 
 }
 
 h1 {
    color: white;
    font-size: 5rem;
+   font-family: "Lemon Tuesday"; 
    
 }
 
 main {
     padding: 3rem;
     display: grid;
-    place-items: center;
+    grid-template-columns: 2fr 1fr;
+    place-items: top;
 }
 
-header {
-    padding: 2rem;
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .lottery-result {
     place-items: center;
-    display: grid;
+    align-items: center;
     min-height: 30vh;
     min-width: 30vw;
-    align-items: stretch;
+    margin: auto;
+}
+
+.wishlist-container {
+    align-items: center;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-buttons button {
+    margin: 20px;
 }
 
 .result-image {
